@@ -1,24 +1,26 @@
+using System;
 using UnityEngine;
 
 
 public class PlayerController : MonoBehaviour
 {   
-    [SerializeField] float moveSpeed; 
+    [Header("General Setup Settings")]
+    [Tooltip("How fast ship based upon player input")] [SerializeField] float moveSpeed; 
     [SerializeField] float xRange = 10f;
     [SerializeField] float yRange = 7f;
+    [Header("Screen position based settings")]
     [SerializeField] float positionPitchFactor = -2f;
     [SerializeField] float controlPitchFactor = -7f;
     [SerializeField] float positionYawFactor = 4f;
     [SerializeField] float controlRollFactor = -25f;
+    [SerializeField] GameObject[] lasers;
     float xThrow, yThrow;
-
-
     void Update()
     {
         ProcessTranslation();
         ProcessRotation();
+        ProcessFiring();
     }
-
     void ProcessTranslation()
     {
         xThrow = Input.GetAxis("Horizontal");
@@ -34,7 +36,6 @@ public class PlayerController : MonoBehaviour
 
         transform.localPosition = new Vector3(clampedxPos, clampedyPos, transform.localPosition.z);
     }
-
     void ProcessRotation()
     {
         float pitchDueToPosition = transform.localPosition.y * positionPitchFactor;
@@ -49,4 +50,27 @@ public class PlayerController : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
     }
+    void ProcessFiring()
+    {
+        if(Input.GetButton("Fire1"))
+        {
+            SetLasersActive(true);
+        }
+        else
+        {
+            SetLasersActive(false);
+        }
+    }
+    void SetLasersActive(bool isActive)
+    {
+        foreach(GameObject laser in lasers)
+        {
+            var emissionModule = laser.GetComponent<ParticleSystem>().emission;
+            emissionModule.enabled = isActive;
+            
+        }
+    }
+
+
+    
 }
