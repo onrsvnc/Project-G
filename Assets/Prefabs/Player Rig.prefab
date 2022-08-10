@@ -147,7 +147,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3357410016985029626, guid: 90e2779abd4e60d4397810281f2d1ce4, type: 3}
       propertyPath: m_Name
-      value: UAV Trident
+      value: Player Ship
       objectReference: {fileID: 0}
     - target: {fileID: 3357410016985241492, guid: 90e2779abd4e60d4397810281f2d1ce4, type: 3}
       propertyPath: m_RootOrder
@@ -231,7 +231,7 @@ PrefabInstance:
       objectReference: {fileID: 5485961516704974233}
     - target: {fileID: 5949327215591988265, guid: 90e2779abd4e60d4397810281f2d1ce4, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5949327215591988267, guid: 90e2779abd4e60d4397810281f2d1ce4, type: 3}
       propertyPath: m_RootOrder
@@ -319,7 +319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7840264170251717217, guid: 90e2779abd4e60d4397810281f2d1ce4, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7840264170251717219, guid: 90e2779abd4e60d4397810281f2d1ce4, type: 3}
       propertyPath: m_RootOrder
