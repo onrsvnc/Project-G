@@ -12,6 +12,7 @@
 
 # To ignore assetpacks
 /Assets/AssetPacks/
+/Assets/EffectExamples/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
