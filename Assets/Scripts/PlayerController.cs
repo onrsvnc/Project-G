@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
         {
             var emissionModule = laser.GetComponent<ParticleSystem>().emission;
             emissionModule.enabled = isActive;
-            
+            laser.GetComponent<AudioSource>().enabled = isActive;
         }
     }
 

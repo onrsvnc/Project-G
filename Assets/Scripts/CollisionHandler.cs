@@ -37,6 +37,7 @@ public class CollisionHandler : MonoBehaviour
     void StartCrashSequence()
     {
         deathExplosion.Play();
+        GetComponent<AudioSource>().Play();
         DisableLasers();
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<MeshCollider>().enabled = false;
@@ -50,6 +51,7 @@ public class CollisionHandler : MonoBehaviour
         var emmisionL = laserL.emission;
         emmisionR.enabled = false;
         emmisionL.enabled = false;
+        laserR.GetComponent<AudioSource>().enabled = false;
     }
 
     void ReloadLevel()

@@ -65,6 +65,7 @@ GameObject:
   - component: {fileID: 5259846053394327688}
   - component: {fileID: 5259846053394327695}
   - component: {fileID: 5259846053394327694}
+  - component: {fileID: 8675795806829079208}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -138,6 +139,66 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5259846053394327693}
   m_Enabled: 1
+--- !u!114 &8675795806829079208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5259846053394327693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 5259846053394327688}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 1
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 1
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1001 &2372335252606177275
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -145,6 +206,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5259846053295061420}
     m_Modifications:
+    - target: {fileID: 1632645105896329116, guid: 90e2779abd4e60d4397810281f2d1ce4, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 3357410016985029626, guid: 90e2779abd4e60d4397810281f2d1ce4, type: 3}
       propertyPath: m_Name
       value: Player Ship
@@ -317,6 +382,14 @@ PrefabInstance:
       propertyPath: InitialModule.startLifetime.scalar
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7763492680399000721, guid: 90e2779abd4e60d4397810281f2d1ce4, type: 3}
+      propertyPath: laserL
+      value: 
+      objectReference: {fileID: 8249604695863514066}
+    - target: {fileID: 7763492680399000721, guid: 90e2779abd4e60d4397810281f2d1ce4, type: 3}
+      propertyPath: laserR
+      value: 
+      objectReference: {fileID: 5485961516704974234}
     - target: {fileID: 7840264170251717217, guid: 90e2779abd4e60d4397810281f2d1ce4, type: 3}
       propertyPath: playOnAwake
       value: 1
@@ -337,8 +410,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7840264170251717218, guid: 90e2779abd4e60d4397810281f2d1ce4, type: 3}
   m_PrefabInstance: {fileID: 2372335252606177275}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &5485961516704974234 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7840264170251717217, guid: 90e2779abd4e60d4397810281f2d1ce4, type: 3}
+  m_PrefabInstance: {fileID: 2372335252606177275}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8249604695863514065 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5949327215591988266, guid: 90e2779abd4e60d4397810281f2d1ce4, type: 3}
+  m_PrefabInstance: {fileID: 2372335252606177275}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8249604695863514066 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5949327215591988265, guid: 90e2779abd4e60d4397810281f2d1ce4, type: 3}
   m_PrefabInstance: {fileID: 2372335252606177275}
   m_PrefabAsset: {fileID: 0}
