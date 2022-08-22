@@ -1,18 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Playables;
 
 public class LevelManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    ScoreKeeper scoreKeeper;
+    static ScoreKeeper instance;
+    void Awake()
     {
-        
+        scoreKeeper = FindObjectOfType<ScoreKeeper>();
+    }
+    void Update() 
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            LoadMenu();
+        }
+    }
+    public void LoadGame()
+    {
+        if(instance != null)
+        {
+            scoreKeeper.ResetScore();
+        }
+        SceneManager.LoadScene("Main Level");
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+    public void LoadCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

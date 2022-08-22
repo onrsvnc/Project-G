@@ -69,8 +69,5 @@ public class PlayerController : MonoBehaviour
             emissionModule.enabled = isActive;
             laser.GetComponent<AudioSource>().enabled = isActive;
         }
-    }
-
-
-    
+    }   
 }
